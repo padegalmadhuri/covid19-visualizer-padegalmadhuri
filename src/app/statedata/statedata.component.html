@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+      <button class="btn" routerLink="/dashboard">Back to dashboard</button>
+    </div>
+<div class="row">
+    <div class="col-lg-12 col-xl-6">
+    <p class="h1">{{ name }}</p>
+    <table class="table  table-borderless table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">District</th>
+          <th class="text-right" scope="col">confirmed</th>
+          <th class="text-right" scope="col">active</th>
+          <th class="text-right" scope="col">recovered</th>
+          <th class="text-right" scope="col">deceased</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="mt-3" *ngFor="let dist of data; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>
+            {{ dist["district"] }}
+          </td>
+          <td class="text-right">
+            <small
+              class="text-primary pr-2"
+              *ngIf="dist['delta']['confirmed'] > 0"
+              >+{{ dist["delta"]["confirmed"] }}</small
+            >{{ dist["confirmed"] }}
+          </td>
+          <td class="text-right">{{ dist["active"] }}</td>
+          <td class="text-right">
+            <small
+              class="text-success pr-2"
+              *ngIf="dist['delta']['recovered'] > 0"
+              >+{{ dist["delta"]["recovered"] }}</small
+            >
+            {{ dist["recovered"] }}
+          </td>
+          <td class="text-right">
+            <small
+              class="text-danger pr-2"
+              *ngIf="dist['delta']['deceased'] > 0"
+              >+{{ dist["delta"]["deceased"] }}</small
+            >{{ dist["deceased"] }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-12 col-lg-12 col-xl-6 pt-5">
+    <div class="row mb-3">
+      <div class="col-3 offset-2"></div>
+    </div>
+
+</div>
+  </div>
+</div>

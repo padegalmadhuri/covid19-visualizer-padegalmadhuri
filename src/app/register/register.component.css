@@ -1,0 +1,11 @@
+@import '~ngx-toastr/toastr';
+/* @import '~ngx-toastr/toastr-bs4-alert'; */
+.has-error{
+  border:1px solid red;
+}
+.has-noerror{
+  border:1px solid green;
+}
+.has-errortag{
+  color:red;
+}

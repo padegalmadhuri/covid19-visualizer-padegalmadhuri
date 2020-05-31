@@ -1,0 +1,48 @@
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card border-secondary">
+                        <div class="card-header">
+                            <h3 class="mb-0 my-2">Sign Up</h3>
+                        </div>
+                        <div class="card-body">
+                            <form class="form"  autocomplete="off" [formGroup]="profileForm" (ngSubmit)="registeruser()">
+                                <div class="form-group">
+                                    <label for="inputName">FirtsName</label>
+                                    <input type="text" class="form-control" id="inputName" placeholder="first name" formControlName="firstName" [ngClass]="{'has-error':profileForm.get('firstName').dirty  && !profileForm.get('firstName').valid,'has-noerror':profileForm.get('firstName').valid}">
+                                          <span class="has-errortag" *ngIf="!profileForm.get('firstName').valid && profileForm.get('firstName').dirty">Please enter a Firstname</span>
+                                        </div>
+
+                                <div class="form-group">
+                                    <label for="inputName1">LastName</label>
+                                    <input type="text" class="form-control" id="inputName1" placeholder="name" formControlName="lastName" [ngClass]="{'has-error':profileForm.get('lastName').dirty  && !profileForm.get('lastName').valid,'has-noerror':profileForm.get('lastName').valid}">
+                                        <span class="has-errortag" *ngIf="!profileForm.get('lastName').valid && profileForm.get('lastName').dirty">Please enter a LastName</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail3">Email</label>
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="email@gmail.com"formControlName="email"[ngClass]="{'has-error':profileForm.get('email').dirty  && !profileForm.get('email').valid,'has-noerror':profileForm.get('email').valid}" >
+                                    <span class="has-errortag" *ngIf="!profileForm.get('email').valid && profileForm.get('email').dirty">Please enter your valid email</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword3">Password</label>
+                                    <input type="password" class="form-control" id="inputPassword3" placeholder="password" formControlName="password" [ngClass]="{'has-error':profileForm.get('password').dirty  && !profileForm.get('password').valid,'has-noerror':profileForm.get('password').valid}">
+                                    <span class="has-errortag" *ngIf="!profileForm.get('password').valid && profileForm.get('password').dirty">Please enter a password (6 chars min)</span>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success btn-lg float-right" [disabled]="!profileForm.valid">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/row-->
+
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->

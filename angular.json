@@ -24,9 +24,13 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+                  "node_modules/chart.js/dist/Chart.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "covid19angular"
+    }
+  },
+  "defaultProject": "covid19angular",
+  "cli": {
+    "analytics": "c2e5a10a-b8b5-4d8a-b578-d5c5b632a43b"
+  }
 }
