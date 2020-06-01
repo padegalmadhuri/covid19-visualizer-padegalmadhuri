@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
       this.auth.loginUser(this.loginForm.value)
       .subscribe(res=>{
         //alert("LOGIN success");
+        localStorage.setItem('token', res['token']);
         this.toastr.success("Login success");
         console.log(res);
         this.auth.storeToken(res.token);

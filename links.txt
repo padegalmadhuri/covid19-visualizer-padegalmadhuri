@@ -1,0 +1,6 @@
+GitHub
+https://github.com/padegalmadhuri/covid19-visualizer-padegalmadhuri
+91a66c165425174857039d8a68cde0ae8721ad64
+
+netlify
+https://covid19-visualizer-padegalmadhuri.netlify.app/#/

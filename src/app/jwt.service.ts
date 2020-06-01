@@ -16,7 +16,9 @@ export class JwtService {
   }
   loginUser(user)
   {
+    console.log(localStorage.getItem('token'));
     return this.http.post<any>(this.loginUrl,user)
+
   }
   storeToken(token){
     localStorage.setItem('token',token);
@@ -24,6 +26,11 @@ export class JwtService {
   logout(){
     localStorage.removeItem('token');
     this.router.navigate(["/"]);
+  }
+
+  isLoggedIn(){
+    //console.log(localStorage.getItem('token'))
+    return !!localStorage.getItem('token');
   }
   getData(){
     return this.http.get<any>(this.statusUrl);
